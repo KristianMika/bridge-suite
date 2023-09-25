@@ -4,7 +4,7 @@ This project aims to provide a tool that interconnects common cryptographic inte
 
 The MPC Bridge consists of multiple components:
 
-- [Bridge Controller](./components/Bridge-Controller.md) ([GitHub](https://github.com/KristianMika/bridge-controller))
-- [Cryptoki Bridge](./components/Cryptoki-Bridge.md) ([GitHub](https://github.com/KristianMika/cryptoki-bridge))
-- [FIDO2 Bridge](./components/Fido2-Bridge.md) (tbd)
-- [Web eID Bridge](./components/Web-eID-Bridge.md) (tbd)
+- [Bridge Controller](./Bridge-Controller.md) ([GitHub](https://github.com/KristianMika/bridge-controller))
+- [Cryptoki Bridge](./Cryptoki-Bridge.md) ([GitHub](https://github.com/KristianMika/cryptoki-bridge))
+- [FIDO2 Bridge](./Fido2-Bridge.md) (tbd)
+- [Web eID Bridge](./Web-eID-Bridge.md) (tbd)
