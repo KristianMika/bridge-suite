@@ -29,7 +29,7 @@ Cryptoki Bridge is a shared library that can be loaded into any application that
 
 ### Applications
 
-- [OpenSSH Authentication](./Applications.md#openssh-authentication)
+- [OpenSSH Authentication](Applications.md#openssh-authentication)
 
 ## Development
 
