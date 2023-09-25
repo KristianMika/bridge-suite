@@ -19,4 +19,4 @@ jobs:
       - run: cat ./wiki/Home.md
       - uses: Andrew-Chen-Wang/github-wiki-action@v4
         with:
-          preprocess: true
+          preprocess: false
