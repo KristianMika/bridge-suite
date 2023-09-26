@@ -27,7 +27,7 @@ Navigate to the [releases page](https://github.com/KristianMika/cryptoki-bridge/
 
 ## Usage
 
-Cryptoki Bridge is a shared library that can be loaded into any application that supports PKCS#11. On Debian-based distributions, the library is installed in `/usr/lib/libcryptoki_bridge.so`.
+Cryptoki Bridge is a shared library that can be loaded into any application that supports PKCS#11. On Debian-based distributions, the library is installed in `/usr/lib/libcryptoki-bridge.so`.
 
 ### Applications
 
