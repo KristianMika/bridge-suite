@@ -10,7 +10,7 @@ Cryptoki Bridge is an implementation of the [PKCS#11](https://docs.oasis-open.or
 2. Install the cryptoki-bridge package
 
 ```bash
-sudo apt-get install pkcs11 # TODO: rename the package to cryptoki-bridge
+sudo apt-get install cryptoki-bridge
 ```
 
 ### Other Distributions
@@ -27,7 +27,7 @@ Navigate to the [releases page](https://github.com/KristianMika/cryptoki-bridge/
 
 ## Usage
 
-Cryptoki Bridge is a shared library that can be loaded into any application that supports PKCS#11. On Debian-based distributions, the library is installed in `/usr/lib/libmeesign_pkcs11.so`.
+Cryptoki Bridge is a shared library that can be loaded into any application that supports PKCS#11. On Debian-based distributions, the library is installed in `/usr/lib/libcryptoki_bridge.so`.
 
 ### Applications
 
