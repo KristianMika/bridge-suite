@@ -48,3 +48,10 @@ Host <entry_host_name>
 ```bash
 ssh <entry_host_name> # e.g., ssh my_server_via_meesign
 ```
+
+7. Alternatively, you can make your SSH agent aware of the keys provided by the Cryptoki lib using the following command. Subsequently, you should be able to ssh as with regular keys (_DISCLAIMER: I haven't tested this one yet, TODO_).
+
+```bash
+ssh-add -s <meesign_cryptoki_path.so>
+# to remove the provider, use ssh-add -e <meesign_cryptoki_path.so>
+```
