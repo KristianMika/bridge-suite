@@ -4,6 +4,10 @@ Bridge Controller is the central application that provides means to customize an
 
 ## Installation
 
+### Windows
+
+You can install the tool using either the **msi** or **exe** installer available at the [releases page](https://github.com/KristianMika/bridge-controller/releases).
+
 ### Debian-Based Distributions
 
 1. [Setup the MPC Bridge repository](Debian-Repository.md)
@@ -13,11 +17,9 @@ Bridge Controller is the central application that provides means to customize an
 sudo apt-get install bridge-controller
 ```
 
-- Alternatively, an AppImage can be found in the [releases page](https://github.com/KristianMika/bridge-controller/releases).
+### Other Linux Distributions
 
-### Other Distributions
-
-Navigate to the [releases page](https://github.com/KristianMika/bridge-controller/releases) and install the built package.
+You can either directly run or install the built **AppImage** [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher). The **AppImage** is available at the the [releases page](https://github.com/KristianMika/bridge-controller/releases).
 
 ## Usage
 

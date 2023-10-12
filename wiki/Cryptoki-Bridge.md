@@ -4,6 +4,10 @@ Cryptoki Bridge is an implementation of the [PKCS#11](https://docs.oasis-open.or
 
 ## Installation
 
+### Windows
+
+You can download the **dll** library from the [releases page](https://github.com/KristianMika/cryptoki-bridge/releases).
+
 ### Debian-Based Distributions
 
 1. [Setup the MPC Bridge repository](Debian-Repository.md)
@@ -13,9 +17,9 @@ Cryptoki Bridge is an implementation of the [PKCS#11](https://docs.oasis-open.or
 sudo apt-get install cryptoki-bridge
 ```
 
-### Other Distributions
+### Other Linux
 
-Navigate to the [releases page](https://github.com/KristianMika/cryptoki-bridge/releases) and install the built package.
+You can download the **so** library from the [releases page](https://github.com/KristianMika/cryptoki-bridge/releases) and store it to `/usr/lib`.
 
 ## Configuration
 
