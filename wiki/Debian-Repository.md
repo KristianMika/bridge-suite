@@ -28,3 +28,5 @@ curl -s https://packagecloud.io/install/repositories/kristian_mika/mpc-bridge/sc
 ```bash
 sudo apt-get update && sudo apt-get install <mpc bridge component>
 ```
+
+3. (Alternatively) You can also download the packages from the release page, or the packagecloud repository page using your browser.
