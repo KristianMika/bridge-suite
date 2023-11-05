@@ -25,7 +25,7 @@ You can download the **so** library from the [releases page](https://github.com/
 
 1. [Bridge Controller](Bridge-Controller.md)
 2. ENV Variables
-   - _COMMUNICATOR_URL_ - sets the meesign URL
+   - _COMMUNICATOR_HOSTNAME_ - sets the meesign hostname, e.g., `meesign.crocs.fi.muni.cz`
    - _GROUP_ID_ - sets the signing group
    - _COMMUNICATOR_CERTIFICATE_PATH_ - provides the library with the path to the CA certificate
 
