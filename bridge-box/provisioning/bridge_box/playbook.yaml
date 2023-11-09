@@ -1,0 +1,13 @@
+---
+- hosts: bridge-box
+  vars:
+    target_user: vagrant
+  roles:
+    - env-setup
+    - meesign-client
+    - meesign-server
+    - firefox
+    - webeid
+    - meesign-virtual-card
+    - mpc-bridge
+    - cleanup

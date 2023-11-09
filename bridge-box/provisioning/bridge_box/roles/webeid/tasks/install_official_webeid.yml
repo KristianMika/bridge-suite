@@ -1,0 +1,14 @@
+- name: Download WebEid installation script
+  become_user: vagrant
+  become: true
+  get_url:
+    url: https://web-eid.eu/scripts/download-install-web-eid.sh
+    dest: /tmp/download-install-web-eid.sh
+    mode: "0755"
+
+- name: Execute WebEid installation script
+  become_user: vagrant
+  become: true
+  shell: /tmp/download-install-web-eid.sh
+  environment:
+    DEBIAN_FRONTEND: noninteractive

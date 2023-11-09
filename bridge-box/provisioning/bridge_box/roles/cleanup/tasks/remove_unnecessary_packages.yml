@@ -1,0 +1,18 @@
+- name: Remove unnecessary packages
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: absent
+  loop:
+    - thunderbird
+    - "libreoffice*"
+    - "rhythmbox"
+    - aisleriot
+    - gnome-mahjongg
+    - gnome-mines
+    - gnome-sudoku
+    - gnome-games-common
+    - gbrainy
+    - gnome-todo
+    - byobu
+    - remmina

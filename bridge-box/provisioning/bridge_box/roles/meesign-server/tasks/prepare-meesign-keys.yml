@@ -1,0 +1,20 @@
+---
+# It's nice to have the whole repo present
+- name: Clone MeeSign server repo
+  become_user: "{{ target_user }}"
+  git:
+    repo: https://github.com/crocs-muni/meesign-server.git
+    dest: /home/{{ target_user }}/Desktop/meesign-server
+    update: true
+
+- name: Check if keys are generated
+  stat:
+    path: /home/{{ target_user }}/Desktop/meesign-server/keys/meesign-ca-cert.pem
+  register: keys_generated
+
+- name: Run key generation script
+  become_user: "{{ target_user }}"
+  shell:
+    chdir: /home/{{ target_user }}/Desktop/meesign-server
+    cmd: ./generate_keys.sh localhost
+  when: not keys_generated.stat.exists

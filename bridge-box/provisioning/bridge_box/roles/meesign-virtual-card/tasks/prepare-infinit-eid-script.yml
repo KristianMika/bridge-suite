@@ -1,0 +1,23 @@
+- name: Install build requirements for InfinitEID script
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - python3
+    - python3-pip
+    - swig
+
+- name: Clone modified InfinitEID (may fail on re-runs)
+  become_user: "{{ target_user }}"
+  become: true
+  git:
+    repo: https://github.com/KristianMika/InfinitEID.git
+    dest: /home/{{ target_user }}/InfinitEID/
+    update: true
+  ignore_errors: true # in case it is already cloned
+
+- name: Install requirements
+  become: true
+  pip:
+    requirements: /home/{{ target_user }}/InfinitEID/src/InfinitEID-card-management/requirements.txt

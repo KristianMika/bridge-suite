@@ -1,0 +1,27 @@
+- name: Create user group
+  group:
+    name: "{{ target_user }}"
+    state: present
+
+- name: Create user {{target_user}}
+  user:
+    name: "{{ target_user }}"
+    password: "{{ target_user_password }}"
+    uid: 1000
+    group: "{{ target_user }}"
+    groups: "sudo"
+    createhome: yes
+    home: /home/{{ target_user }}
+    system: false
+    shell: /bin/bash
+
+- name: Allow {{target_user}} group to have passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: "^%{{target_user}}"
+    line: "%{{target_user}} ALL=(ALL) NOPASSWD: ALL"
+    validate: "visudo -cf %s"
+
+- name: Reset ssh connection to update user changes
+  ansible.builtin.meta: reset_connection

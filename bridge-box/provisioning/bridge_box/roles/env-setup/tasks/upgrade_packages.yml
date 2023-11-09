@@ -1,0 +1,14 @@
+- name: Upgrade packages and apt cache
+  become: true
+  apt:
+    name: "*"
+    state: latest
+    update_cache: yes
+    autoremove: yes
+
+# reboot is needed as this can cause a newer version of the kernel to be installed
+# and next steps utilize uname -a to determine the kernel version
+# which can be different from the kernel version that was installed before the reboot
+- name: Reboot the machine
+  become: true
+  reboot:

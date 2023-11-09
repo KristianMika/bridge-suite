@@ -1,0 +1,4 @@
+---
+- import_tasks: install-docker.yml
+- import_tasks: prepare-meesign-keys.yml
+- import_tasks: prepare-and-run-meesign-image.yml

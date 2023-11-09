@@ -1,0 +1,47 @@
+- name: Install build requirements for vsmartcard
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - help2man
+    - python3
+    - python3-pip
+
+- name: Install requirements
+  become_user: "{{ target_user }}"
+  become: true
+  pip:
+    name: "{{ item }}"
+  loop:
+    - grpcio
+    - protobuf==4.23
+
+- name: Clone modified vsmartcard (may fail on re-runs)
+  git:
+    repo: https://github.com/KristianMika/vsmartcard.git
+    dest: /home/{{ target_user }}/vsmartcard/
+    update: true
+    version: master
+  ignore_errors: true # in case it is already cloned
+
+- name: Run Autoreconf
+  shell:
+    chdir: /home/{{ target_user }}/vsmartcard/virtualsmartcard/
+    cmd: autoreconf --verbose --install
+
+- name: Configure
+  shell:
+    chdir: /home/{{ target_user }}/vsmartcard/virtualsmartcard/
+    cmd: ./configure --sysconfdir=/etc --prefix="/home/{{ target_user }}/.local/"
+
+- name: Build
+  shell:
+    chdir: /home/{{ target_user }}/vsmartcard/virtualsmartcard/
+    cmd: make
+
+- name: Install
+  become: true
+  shell:
+    chdir: /home/{{ target_user }}/vsmartcard/virtualsmartcard/
+    cmd: make install

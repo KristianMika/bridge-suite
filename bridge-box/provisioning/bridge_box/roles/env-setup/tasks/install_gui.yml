@@ -1,0 +1,5 @@
+- name: Install ubuntu desktop
+  become: true
+  apt:
+    name: ubuntu-desktop
+    state: present

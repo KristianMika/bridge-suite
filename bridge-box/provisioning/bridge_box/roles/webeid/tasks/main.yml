@@ -1,0 +1,5 @@
+---
+- import_tasks: install_build_dependencies.yml
+- import_tasks: install_official_webeid.yml
+- import_tasks: install_modified_webeid.yml
+- import_tasks: copy_nextcloud_link.yml

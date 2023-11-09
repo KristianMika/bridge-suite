@@ -1,0 +1,66 @@
+---
+- name: Download MPC Bridge Debian repo setup script
+  get_url:
+    url: https://packagecloud.io/install/repositories/kristian_mika/mpc-bridge/script.deb.sh
+    dest: /tmp/mpc-bridge-script.sh
+    mode: 0755
+
+- name: setup MPC Bridge Debian repo
+  become: true
+  shell: /tmp/mpc-bridge-script.sh
+
+- name: Get current kernel version
+  shell: uname -r
+  register: kernel_version
+
+- name: Install kernel modules
+  become: true
+  apt:
+    name: "linux-modules-extra-{{ kernel_version.stdout }}"
+    state: present
+
+- name: Install MPC Bridge components
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - bridge-controller
+    - cryptoki-bridge
+    - softfido
+
+- name: Add {{ target_user }} to group plugdev
+  become: true
+  user:
+    name: "{{ target_user }}"
+    groups: plugdev
+    append: yes
+
+- name: Add {{ target_user }} to group mpc-bridge
+  become: true
+  user:
+    name: "{{ target_user }}"
+    groups: mpc-bridge
+    append: yes
+
+# for some reason, (mostly vagrant) configures the home directory with root as owner,
+# which causes problems with the MPC Bridge components and is an issue in general
+- name: Set directory owner to vagrant
+  become: true
+  file:
+    path: /home/vagrant/.local/
+    owner: vagrant
+    state: directory
+    recurse: true
+
+- name: Download latest chrome deb package
+  get_url:
+    url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    dest: /tmp/google-chrome-stable_current_amd64.deb
+
+- name: Install chrome
+  become: true
+  apt:
+    deb: /tmp/google-chrome-stable_current_amd64.deb
+    state: present

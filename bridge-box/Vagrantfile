@@ -1,0 +1,46 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.synced_folder ".", "/vagrant", create: true
+  
+  config.vm.define "bridge-box" do |bridge_box|
+    bridge_box.vm.box = "ubuntu/jammy64"
+    bridge_box.vm.hostname = "bridge-box"
+    bridge_box.vm.network :private_network, ip: "192.168.62.55"
+
+    # Specify resources to allocate
+    bridge_box.vm.provider "virtualbox" do |vb|
+      vb.gui = true
+      vb.memory = "5120"
+      vb.cpus = 4
+
+      # Set the video memory to 128Mb
+      vb.customize ["modifyvm", :id, "--vram", "128"]
+
+      # specify graphics controller 
+      vb.customize ['modifyvm', :id, '--graphicscontroller', 'vmsvga']
+
+      # Enable 3D acceleration
+      vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+
+      # Share clipboard
+      vb.customize ['modifyvm', :id, '--clipboard-mode', 'bidirectional']
+
+      # Enable drag'n drop
+      vb.customize ['modifyvm', :id, '--draganddrop', 'bidirectional']
+
+    end
+    
+    bridge_box.vm.provision "ansible" do |ansible|
+      ansible.playbook = "provisioning/bridge_box/playbook.yaml"
+
+      ansible.compatibility_mode = "2.0"
+    end
+
+    # Reboot the machine
+    bridge_box.vm.provision :shell, inline: "sudo shutdown -r now"
+  end
+  vagrant_synced_folder_default_type = ""
+end
+

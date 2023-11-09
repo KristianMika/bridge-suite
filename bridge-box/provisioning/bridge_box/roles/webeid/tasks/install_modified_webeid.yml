@@ -1,0 +1,53 @@
+- name: Clone libelectronic ID (may fail on re-runs)
+  become_user: "{{ target_user }}"
+  become: true
+  git:
+    repo: https://github.com/web-eid/web-eid-app
+    dest: /home/{{ target_user }}/web-eid-app/
+    update: true
+    version: b50b84b2841d57edfa440e33024ebcf9b4ee304d
+  ignore_errors: true # in case it is already cloned
+
+- name: Set submodule url
+  become_user: "{{ target_user }}"
+  become: true
+  shell:
+    chdir: /home/{{ target_user }}/web-eid-app/
+    cmd: git submodule set-url lib/libelectronic-id https://github.com/Muzosh/libelectronic-id-with-InfinitEID.git
+
+- name: Update submodules
+  become_user: "{{ target_user }}"
+  become: true
+  shell:
+    chdir: /home/{{ target_user }}/web-eid-app/
+    cmd: git submodule update --init --remote --recursive
+
+- name: Add signature-alg to hash mapping
+  become_user: "{{ target_user }}"
+  become: true
+  lineinfile:
+    path: /home/{{ target_user }}/web-eid-app/src/controller/command-handlers/authenticate.cpp
+    insertafter: "^[ ]+std::map<JsonWebSignatureAlgorithm, QCryptographicHash::Algorithm> {$"
+    line: "{JsonWebSignatureAlgorithm::ES256, QCryptographicHash::Sha256},"
+    firstmatch: yes
+
+- name: Configure cmake
+  become_user: "{{ target_user }}"
+  become: true
+  shell:
+    chdir: /home/{{ target_user }}/web-eid-app/
+    cmd: cmake .
+
+- name: Build modified WebEid
+  become_user: "{{ target_user }}"
+  become: true
+  shell:
+    chdir: /home/{{ target_user }}/web-eid-app/
+    cmd: cmake --build .
+
+- name: Install modified WebEid
+  become_user: root
+  become: true
+  shell:
+    chdir: /home/{{ target_user }}/web-eid-app/
+    cmd: cmake --build . --target install

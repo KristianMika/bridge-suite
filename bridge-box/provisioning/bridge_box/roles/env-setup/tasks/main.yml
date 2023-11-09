@@ -1,0 +1,3 @@
+---
+- import_tasks: upgrade_packages.yml
+- import_tasks: install_gui.yml

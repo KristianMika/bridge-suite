@@ -1,0 +1,11 @@
+- name: Add mozilla repo
+  become: true
+  apt_repository:
+    repo: ppa:mozillateam/ppa
+    state: present
+
+- name: Install firefox using apt
+  become: true
+  apt:
+    name: firefox-esr
+    update_cache: true

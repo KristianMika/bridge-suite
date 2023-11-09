@@ -1,0 +1,19 @@
+---
+- name: Pull MeeSign server nightly Docker image
+  become: true
+  community.general.docker_image:
+    name: crocsmuni/meesign:nightly
+    source: pull
+
+- name: Run meesign server
+  become: true
+  community.general.docker_container:
+    name: meesign_server_nightly
+    image: crocsmuni/meesign:nightly
+    state: started
+    detach: yes
+    restart_policy: always
+    published_ports:
+      - "1337:1337"
+    volumes:
+      - "/home/{{ target_user }}/Desktop/meesign-server/keys:/meesign/keys/"

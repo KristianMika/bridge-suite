@@ -1,0 +1,36 @@
+---
+- name: Download meesign client
+  get_url:
+    url: https://meesign.crocs.fi.muni.cz/meesign_client_Linux.tar.gz
+    dest: /tmp/meesign_client_Linux.tar.gz
+    owner: "{{ target_user }}"
+
+# TODO: consider proper installation
+- name: Create directories for meesign client
+  file:
+    path: /home/{{ target_user }}/Desktop/{{ item }}
+    state: directory
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+  loop:
+    - meesign_client_1
+    - meesign_client_2
+
+- name: Install meesign client
+  unarchive:
+    src: https://meesign.crocs.fi.muni.cz/meesign_client_Linux.tar.gz
+    remote_src: yes
+    dest: /home/{{ target_user }}/Desktop/meesign_client_1/
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+
+- name: Double meesign client implementation # for multiple running instances
+  become: true # TODO: investigate a bug why it is needed
+  copy:
+    src: /home/{{ target_user }}/Desktop/meesign_client_1/
+    dest: /home/{{ target_user }}/Desktop/meesign_client_2/
+    mode: preserve
+    remote_src: yes
+    directory_mode: yes
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
