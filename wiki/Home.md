@@ -8,3 +8,8 @@ The MPC Bridge consists of multiple components:
 - [Cryptoki Bridge](Cryptoki-Bridge.md) - PKCS#11 library implementation ([GitHub](https://github.com/KristianMika/cryptoki-bridge))
 - [FIDO2 Bridge](Fido2-Bridge.md) - FIDO2 emulated token (tbd)
 - [Web eID Bridge](Web-eID-Bridge.md) - Web eID emulated applet (tbd)
+
+## How to test?
+
+- The easiest way is to use the preconfigured Vagrant configuration located [here](DemoSetup.md)
+- If you are interested in a specific component, please refer to the corresponding page for more information
