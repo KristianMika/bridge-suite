@@ -29,6 +29,8 @@ Upon installation, the application is available in the desktop menu tray.
 
 Folder _.devcontainer_ contains a configuration for an environment with all the build dependencies. To learn how to use it, please refer to the provided tutorial locaten in the [Development](Development.md) page.
 
+Please, note, this setup has some limitations. For example, you can upload files only from the `devcontainer-shared-files` directory that is located in the repo root and can be accessed from within the container at `/home/dev/shared-files` (can be changed in devcontainer.json under mounts.
+
 ### Build Requirements
 
 _(Already installed in the devcontainer)_
