@@ -17,7 +17,7 @@ deb-src [signed-by=/etc/apt/keyrings/kristian_mika_mpc-bridge-archive-keyring.gp
 EOT
 ```
 
-2. (Alternatively, on your own risk) Run the following script provided by packagecloud as a quick substitude for the previous steps.
+2. (Alternatively, at your own risk) Run the following script provided by packagecloud as a quick substitude for the previous steps.
 
 ```bash
 curl -s https://packagecloud.io/install/repositories/kristian_mika/mpc-bridge/script.deb.sh?any=true | sudo bash
