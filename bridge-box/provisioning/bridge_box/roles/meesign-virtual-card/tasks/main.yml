@@ -1,7 +1,9 @@
 - import_tasks: install-vsmartcard.yml
 - import_tasks: prepare-infinit-eid-script.yml
-- name: Start pcscd
+- name: Enable and Start pcscd
   become: true
   systemd:
     name: pcscd
     state: started
+    enabled: yes
+    masked: no

@@ -7,6 +7,8 @@
     - help2man
     - python3
     - python3-pip
+    - autoconf
+    - libtool
 
 - name: Install requirements
   become_user: "{{ target_user }}"
@@ -22,6 +24,7 @@
     repo: https://github.com/KristianMika/vsmartcard.git
     dest: /home/{{ target_user }}/vsmartcard/
     update: true
+    recursive: true
     version: master
   ignore_errors: true # in case it is already cloned
 
@@ -33,7 +36,7 @@
 - name: Configure
   shell:
     chdir: /home/{{ target_user }}/vsmartcard/virtualsmartcard/
-    cmd: ./configure --sysconfdir=/etc --prefix="/home/{{ target_user }}/.local/"
+    cmd: ./configure --sysconfdir=/etc
 
 - name: Build
   shell:
@@ -45,3 +48,13 @@
   shell:
     chdir: /home/{{ target_user }}/vsmartcard/virtualsmartcard/
     cmd: make install
+
+- name: Augment Python Package Path
+  become_user: "{{ target_user }}"
+  become: true
+  lineinfile:
+    path: /home/{{ target_user }}/.bashrc
+    line: export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.10/site-packages/
+    state: present
+    create: yes
+    insertafter: EOF
