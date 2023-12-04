@@ -2,6 +2,7 @@
 - hosts: bridge-box
   vars:
     target_user: vagrant
+    meesign_server_version: v0.2.0
   roles:
     - env-setup
     - meesign-client

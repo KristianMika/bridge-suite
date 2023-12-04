@@ -2,7 +2,7 @@
 - name: Pull MeeSign server nightly Docker image
   become: true
   community.general.docker_image:
-    name: crocsmuni/meesign:nightly
+    name: crocsmuni/meesign:{{ meesign_server_version }}
     source: pull
 
 - name: Run meesign server
