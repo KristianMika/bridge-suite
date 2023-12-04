@@ -1,6 +1,0 @@
-- name: Copy nextcloud link
-  copy:
-    src: ./files/nextcloud.html
-    dest: /home/{{ target_user }}/Desktop/
-    group: "{{ target_user }}"
-    owner: "{{ target_user }}"
