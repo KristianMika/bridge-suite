@@ -26,9 +26,9 @@
     state: present
     update_cache: yes
   with_items:
-    - bridge-controller
-    - cryptoki-bridge
-    - softfido
+    - bridge-controller={{ bridge_controller_version }}
+    - cryptoki-bridge={{ cryptoki_bridge_version }}
+    - softfido={{ softfido_version }}
 
 - name: Add {{ target_user }} to group plugdev
   become: true
