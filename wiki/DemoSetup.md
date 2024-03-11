@@ -1,4 +1,4 @@
-This project can be tested using a Vagrant configuration provided in [bridge-box](https://github.com/KristianMika/mpc-bridge/tree/main/bridge-box). The configuration creates a ubuntu machine and install all the tools.
+This project can be tested using a Vagrant configuration provided in [bridge-box](https://github.com/KristianMika/bridge-suite/tree/main/bridge-box). The configuration creates a ubuntu machine and install all the tools.
 
 ## Requirements
 

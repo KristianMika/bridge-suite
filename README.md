@@ -1,3 +1,3 @@
-# Cryptoki Bridge
+# Bridge Suite
 
-For documentation, navigate to the project [Wiki](https://github.com/KristianMika/mpc-bridge/wiki).
+For documentation, navigate to the project [Wiki](https://github.com/KristianMika/bridge-suite/wiki).
