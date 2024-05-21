@@ -2,9 +2,9 @@
 - hosts: bridge-box
   vars:
     target_user: vagrant
-    meesign_server_version: v0.2.0
-    bridge_controller_version: "0.1.3"
-    cryptoki_bridge_version: "0.1.2-1"
+    meesign_server_version: v0.3.0
+    bridge_controller_version: "0.2.0"
+    cryptoki_bridge_version: "0.2.0"
     softfido_version: "0.1.1-1"
   roles:
     - env-setup
