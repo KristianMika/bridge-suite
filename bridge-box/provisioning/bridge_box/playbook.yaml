@@ -2,7 +2,8 @@
 - hosts: bridge-box
   vars:
     target_user: vagrant
-    meesign_server_version: v0.3.0
+    meesign_server_docker_version: nightly
+    meesign_client_version: "0.4.2"
     bridge_controller_version: "0.2.0"
     cryptoki_bridge_version: "0.2.0"
     softfido_version: "0.1.1-1"

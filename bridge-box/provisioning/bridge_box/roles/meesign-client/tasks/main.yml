@@ -1,10 +1,4 @@
 ---
-- name: Download meesign client
-  get_url:
-    url: https://meesign.crocs.fi.muni.cz/meesign_client_Linux.tar.gz
-    dest: /tmp/meesign_client_Linux.tar.gz
-    owner: "{{ target_user }}"
-
 # TODO: consider proper installation
 - name: Create directories for meesign client
   file:
@@ -18,7 +12,7 @@
 
 - name: Install meesign client
   unarchive:
-    src: https://meesign.crocs.fi.muni.cz/meesign_client_Linux.tar.gz
+    src: https://github.com/crocs-muni/meesign-client/releases/download/v{{ meesign_client_version }}/meesign_client_Linux.tar.gz
     remote_src: yes
     dest: /home/{{ target_user }}/Desktop/meesign_client_1/
     group: "{{ target_user }}"
