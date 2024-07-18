@@ -60,4 +60,9 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
     
-  
+plugins:
+  - search
+  - awesome-pages
+
+extra_css:
+  - stylesheets/extra.css
