@@ -1,0 +1,16 @@
+{
+    "name": "MkDocs Material editor",
+    "image": "squidfunk/mkdocs-material",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/docs,type=bind",
+    "workspaceFolder": "/docs",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "davidanson.vscode-markdownlint"
+            ]
+        }
+    },
+    "forwardPorts": [
+        8000
+    ]
+}
