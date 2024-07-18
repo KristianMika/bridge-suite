@@ -1,3 +1,5 @@
+# Getting Started
+
 This project can be tested using a Vagrant configuration provided in [bridge-box](https://github.com/KristianMika/bridge-suite/tree/main/bridge-box). The configuration creates a ubuntu machine and install all the tools.
 
 ## Requirements
@@ -6,39 +8,39 @@ This project can be tested using a Vagrant configuration provided in [bridge-box
 
 2. Install Ansible community plugins.
 
-```bash
- ansible-galaxy collection install community.general community.docker
-```
+    ```bash
+    ansible-galaxy collection install community.general community.docker
+    ```
 
 ## Usage
 
 - Start the machine
 
-```bash
-vagrant up
-```
+    ```bash
+    vagrant up
+    ```
 
 - Turn off the machine
 
-```bash
-vagrant halt
-```
+    ```bash
+    vagrant halt
+    ```
 
 - Resume the suspended machine
 
-```bash
-vagrant resume
-```
+    ```bash
+    vagrant resume
+    ```
 
 - Destroy the setup
 
-```bash
-vagrant destroy
-```
+    ```bash
+    vagrant destroy
+    ```
 
 ### Using SSH/SFTP
 
-```
+```bash
 vagrant ssh-config > vagrant-ssh-config.txt
 ssh -F vagrant-ssh-config.txt bridge-box
 ```

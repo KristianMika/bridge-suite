@@ -13,9 +13,9 @@ You can download the **dll** library from the [releases page](https://github.com
 1. [Setup the MPC Bridge repository](Debian-Repository.md)
 2. Install the cryptoki-bridge package
 
-```bash
-sudo apt-get install cryptoki-bridge
-```
+    ```bash
+    sudo apt-get install cryptoki-bridge
+    ```
 
 ### Other Linux
 
@@ -23,7 +23,7 @@ You can download the **so** library from the [releases page](https://github.com/
 
 ## Configuration
 
-1. [Bridge Controller](Bridge-Controller.md)
+1. [Bridge Controller](bridge-controller.md)
 2. ENV Variables
    - _COMMUNICATOR_HOSTNAME_ - sets the meesign hostname, e.g., `meesign.crocs.fi.muni.cz` (required)
    - _COMMUNICATOR_CERTIFICATE_PATH_ - provides the library with the path to the CA certificate (required)
@@ -35,11 +35,11 @@ Cryptoki Bridge is a shared library that can be loaded into any application that
 
 ### Applications
 
-- [OpenSSH Authentication](Applications.md#openssh-authentication)
+- [OpenSSH Authentication](applications.md#openssh-authentication)
 
 ## Development
 
-Folder _.devcontainer_ contains a configuration for an environment with all the build dependencies. To learn how to use it, please refer to the provided tutorial locaten in the [Development](Development.md) page.
+Folder _.devcontainer_ contains a configuration for an environment with all the build dependencies. To learn how to use it, please refer to the provided tutorial locaten in the [Development](development.md) page.
 
 ### Build Requirements
 
@@ -50,14 +50,14 @@ _(Already installed in the devcontainer)_
 
 ### Build
 
-- Update submodules
+1. Update submodules
 
-  ```bash
-  git submodule update --init --recursive
-  ```
+    ``` bash
+    git submodule update --init --recursive
+    ```
 
-- Build the library
+2. Build the library
 
-  ```bash
-  cargo build --release
-  ```
+    ```bash
+    cargo build --release
+    ```
