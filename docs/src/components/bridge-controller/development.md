@@ -6,12 +6,13 @@ Please, note, this setup has some limitations. For example, you can upload files
 
 ## Build Requirements
 
-_(Already installed in the devcontainer)_
-
 - [tauri prerequisites](https://tauri.app/v1/guides/getting-started/prerequisites/)
 - [npm, Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [rust](https://www.rust-lang.org/tools/install)
 - [protocol buffer compiler](https://grpc.io/docs/protoc-installation/)
+
+!!! info "Info"
+    All build requirements are already installed in the provided devcontainer environment
 
 ## Development Build
 

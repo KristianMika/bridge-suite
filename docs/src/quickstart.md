@@ -57,8 +57,14 @@ ssh -F vagrant-ssh-config.txt bridge-box
 ### Cryptoki Bridge Setup
 
 - using the start menu, search for `bridge-controller` and run it
-  - _NOTE: controller certificate is in `~/Desktop/meesign-server/keys/meesign-ca-cert.pem`_
+!!! info "Note"
+
+    Controller certificate is in `~/Desktop/meesign-server/keys/meesign-ca-cert.pem`
+
 - the controller can be used to launch the interfaces
-  - _NOTE: WebAuthn and U2F must be tested using the provided chrome browser_
+!!! info "Note"
+
+    WebAuthn and U2F must be tested using the provided chrome browser
+
 - an icon will appear in the trace menu. To display the window, right-click on the icon and select `Show`
 - alternativelly, you can test the interfaces individually: softfido binary is located in `/usr/bin/softfido`, and cryptoki-bridge is located in `/usr/lib/libcryptoki-bridge.so`. Be sure to read the documentaion on how to use the interfaces.

@@ -1,16 +1,16 @@
-
-## Development
+# Development
 
 Folder _.devcontainer_ contains a configuration for an environment with all the build dependencies. To learn how to use it, please refer to the provided tutorial locaten in the [Development](development.md) page.
 
-### Build Requirements
-
-_(Already installed in the devcontainer)_
+## Build Requirements
 
 - [rust](https://www.rust-lang.org/tools/install)
 - [protocol buffer compiler](https://grpc.io/docs/protoc-installation/)
 
-### Build
+!!! info "Info"
+    All build requirements are already installed in the provided devcontainer environment
+
+## Build
 
 1. Update submodules
 
