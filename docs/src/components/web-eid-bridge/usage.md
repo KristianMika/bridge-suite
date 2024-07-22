@@ -1,5 +1,3 @@
-This bridge emulates a Web eID JavaCard applet. It can be used for authentication against Web eID enabled services.
-
 # Usage
 
 ## Create an authentication signature using web-eid binary

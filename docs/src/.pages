@@ -1,12 +1,7 @@
 nav:
     - index.md
     - quickstart.md
-    - applications.md
-    - Components:
-        - overview.md
-        - cryptoki-bridge.md
-        - bridge-controller.md
-        - fido-bridge.md
-        - web-eid-bridge.md
+    - applications
+    - components
     - development.md
     - ...
