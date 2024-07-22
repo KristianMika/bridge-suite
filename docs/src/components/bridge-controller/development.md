@@ -1,8 +1,10 @@
 # Development
 
-Folder _.devcontainer_ contains a configuration for an environment with all the build dependencies. To learn how to use it, please refer to the provided tutorial locaten in the [Development](development.md) page.
+The repository contains a prepared devcontainer environment that can be used for a simple and secure development setup. Refer to the provided [tutorial](../../devcontainer.md) on how to use it.
 
-Please, note, this setup has some limitations. For example, you can upload files only from the `devcontainer-shared-files` directory that is located in the repo root and can be accessed from within the container at `/home/dev/shared-files` (can be changed in devcontainer.json under mounts.
+!!! warning "Warning"
+
+    Please, note, this setup has some limitations. For example, you can upload files only from the `devcontainer-shared-files` directory that is located in the repo root and can be accessed from within the container at `/home/dev/shared-files` (can be changed in devcontainer.json under mounts.
 
 ## Build Requirements
 

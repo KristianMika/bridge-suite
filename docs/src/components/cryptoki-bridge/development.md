@@ -1,6 +1,6 @@
 # Development
 
-Folder _.devcontainer_ contains a configuration for an environment with all the build dependencies. To learn how to use it, please refer to the provided tutorial locaten in the [Development](development.md) page.
+The repository contains a prepared devcontainer environment that can be used for a simple and secure development setup. Refer to the provided [tutorial](../../devcontainer.md) on how to use it.
 
 ## Build Requirements
 
