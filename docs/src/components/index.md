@@ -35,3 +35,7 @@
     [:octicons-arrow-right-24: Learn More](./web-eid-bridge/index.md)
 
 </div>
+
+<figure markdown="span">
+  ![Bridge Suite architecture](../../assets/images/bridge-suite-arch.png){ width="500" }
+</figure>
