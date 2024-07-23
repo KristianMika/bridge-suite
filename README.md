@@ -1,3 +1,3 @@
 # Bridge Suite
 
-For documentation, navigate to the project [Wiki](https://github.com/KristianMika/bridge-suite/wiki).
+For more information, navigate to the [project documentation](https://kristianmika.github.io/bridge-suite/).
