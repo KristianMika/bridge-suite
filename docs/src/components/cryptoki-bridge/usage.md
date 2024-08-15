@@ -10,6 +10,6 @@ Cryptoki Bridge is a shared library that can be loaded into any application that
       - _COMMUNICATOR_CERTIFICATE_PATH_ - provides the library with the path to the CA certificate (required)
       - _GROUP_ID_ - sets the signing group (optional). If not set, all groups present on the communicator are available.
 
-## Applications
+## Use Cases
 
-- [OpenSSH Authentication](../../applications/openssh.md)
+- [OpenSSH Authentication](../../use cases/openssh.md)
