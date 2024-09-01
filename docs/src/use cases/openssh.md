@@ -1,6 +1,16 @@
 
 # OpenSSH Authentication
 
+## Demonstration
+
+The following screencast demonstrates the usage of [Cryptoki Bridge](../components/cryptoki-bridge/index.md) along with [Bridge Controller](../components/bridge-controller/index.md).
+
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true">
+    <source src="../../assets/videos/cryptoki-ssh.mp4" type="video/mp4">
+  </video>
+</figure>
+
 ## Minimal Requirements
 
 1. [Cryptoki Bridge](../components/cryptoki-bridge/index.md) (but the whole MPC Bridge setup is recommended)
