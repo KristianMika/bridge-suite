@@ -1,5 +1,6 @@
 nav:
     - index.md
     - openssh.md
+    - fido2.md
     - gnupg.md
     - ...
