@@ -17,6 +17,9 @@ The following screencast demonstrates the usage of [Cryptoki Bridge](../componen
 2. [MeeSign Server](https://meesign.crocs.fi.muni.cz/)
 3. [MeeSign Clients](https://meesign.crocs.fi.muni.cz/)
 
+!!! note "Note"
+    While the tutorial demonstrates configuration using [Bridge Controller](../components/bridge-controller/index.md), [Cryptoki Bridge](../components/cryptoki-bridge/index.md) can be used independently. For alternative ways to configure the component, please, refer to [this](../components/cryptoki-bridge/usage.md#configuration) documentation.
+
 ## Tutorial
 
 The following tutorial assumes you have created an authentication group on the MeeSign server. If not, please follow the [MeeSign Server](https://meesign.crocs.fi.muni.cz/) documentation.
