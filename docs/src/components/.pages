@@ -3,5 +3,6 @@ nav:
     - Bridge Controller: bridge-controller
     - Cryptoki Bridge: cryptoki-bridge
     - FIDO Bridge: fido-bridge
+    - Nostr Bridge: nostr-bridge
     - Web eID Bridge: web-eid-bridge
     - ...

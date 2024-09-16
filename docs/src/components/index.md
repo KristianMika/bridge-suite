@@ -26,6 +26,14 @@
 
     [:octicons-arrow-right-24: Learn more](./fido-bridge/index.md)
 
+- [:fontawesome-brands-github:{.lg .middle}](https://github.com/KristianMika/nostr-bridge) __Nostr Bridge__
+
+    ---
+
+    Nostr Bridge is a browser extension that allows Nostr event signing in a secure way through the use of threshold cryptography.
+
+    [:octicons-arrow-right-24: Learn More](./nostr-bridge/index.md)
+
 - __Web eID Bridge__
 
     ---
